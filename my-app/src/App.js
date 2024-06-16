@@ -1,9 +1,17 @@
 import './App.css';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { Auth } from './pages/auth';
+import { ExpenseTracker } from './pages/expense-tracker';
 
 function App() {
   return (
     <div className="App">
-      Helloo
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Auth />}/>
+          <Route path="/expenseTracker" exact element={<ExpenseTracker />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
